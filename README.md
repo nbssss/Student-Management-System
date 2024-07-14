@@ -41,3 +41,9 @@ Główne cele to:
 #### Logowanie do systemu
 
 ![](login_rec.gif)
+
+#### Przykładowe zarządzanie studentami
+
+#### Przykładowe zarządzanie kursami
+
+#### Przykładowe zarządzanie ocenami
