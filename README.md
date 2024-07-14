@@ -44,6 +44,8 @@ Główne cele to:
 
 #### Przykładowe zarządzanie studentami
 
+![](student_rec.gif)
+
 #### Przykładowe zarządzanie kursami
 
 #### Przykładowe zarządzanie ocenami
