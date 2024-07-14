@@ -38,3 +38,13 @@ C:\Users\Natalia\source\repos\StudentMangementSystem\bin\Debug\net6.0-windows\ru
 C:\Users\Natalia\source\repos\StudentMangementSystem\bin\Debug\net6.0-windows\runtimes\win-x64\native\krb5_64.dll
 C:\Users\Natalia\source\repos\StudentMangementSystem\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\Natalia\source\repos\StudentMangementSystem\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.ManagerStudentForm.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.PrintStudent.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.CourseForm.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.ManageCourseFormcs.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.PrintCourseForm.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.ScoreForm.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.ManageScoreForm.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.PrintScoreForm.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.LoginForm.resources
+C:\Users\Natalia\source\repos\StudentMangementSystem\obj\Debug\net6.0-windows\StudentMangementSystem.SplashForm.resources

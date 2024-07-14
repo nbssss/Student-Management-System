@@ -21,13 +21,42 @@ namespace StudentMangementSystem
             InitializeComponent();
         }
 
+        // fun to verify if the box is empty
+        bool verify()
+        {
+            if (textBox_Fname.Text == "" || textBox_Lname.Text == "" || textBox_phone.Text == "" || 
+                textBox_address.Text == "" || pictureBox_student.Image == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+            showTable();
+        }
+        
+        // to show student list
+        public void showTable()
+        {
+            DataGridView_student.DataSource = student.getStudentList(new MySqlCommand("SELECT `StdId` AS 'ID', `StdFirstName` AS 'First Name', `StdLastName` AS 'Last Name', `Birthdate`, `Gender`, `Phone`, `Address`, `Photo` FROM `student`"));
+            //DataGridView_student.RowTemplate.Height = 80;
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            imageColumn = (DataGridViewImageColumn)DataGridView_student.Columns[7];
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+        }
+
         private void button_upload_Click(object sender, EventArgs e)
         {
             // browse photo from computer
             OpenFileDialog opf = new OpenFileDialog();
             opf.Filter = "Select photo (*.jpg;*.png;*.gif)|*.jpg;*,png;*.gif";
-      
-            if (opf.ShowDialog() == DialogResult.OK) 
+
+            if (opf.ShowDialog() == DialogResult.OK)
             {
                 pictureBox_student.Image = Image.FromFile(opf.FileName);
             }
@@ -46,11 +75,11 @@ namespace StudentMangementSystem
             int born_year = dateTimePicker1.Value.Year;
             int current_year = DateTime.Now.Year;
 
-            if ( (current_year - born_year) < 10 || (current_year - born_year) > 100)
+            if ((current_year - born_year) < 10 || (current_year - born_year) > 100)
             {
                 MessageBox.Show("The student age must be beetwen 10 and 100", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if ( verify() )
+            else if (verify())
             {
                 try
                 {
@@ -58,13 +87,14 @@ namespace StudentMangementSystem
                     pictureBox_student.Image.Save(ms, pictureBox_student.Image.RawFormat);
                     byte[] img = ms.ToArray();
 
-                    if ( student.insertStudent(fname, lname, bdate, gender, phone, address, img) )
+                    if (student.insertStudent(fname, lname, bdate, gender, phone, address, img))
                     {
                         showTable();
                         MessageBox.Show("New Student Added", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                } catch (Exception ex) 
-                {  
+                }
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -74,41 +104,15 @@ namespace StudentMangementSystem
             }
         }
 
-        // fun to verify if the box is empty
-        bool verify()
-        {
-            if (textBox_Fname.Text == "" || textBox_Lname.Text == "" || textBox_phone.Text == "" || 
-                textBox_address.Text == "" || pictureBox_student.Image == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
         private void button_clear_Click(object sender, EventArgs e)
         {
             textBox_Fname.Clear();
             textBox_Lname.Clear();
             textBox_phone.Clear();
+            dateTimePicker1.Value = DateTime.Now;
+            radioButton_male.Checked = true;
             textBox_address.Clear();
-        }
-        
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-            showTable();
-        }
-        
-        // to show student list
-        public void showTable()
-        {
-            DataGridView_student.DataSource = student.getStudentList(new MySqlCommand("SELECT * FROM `student`"));
-            //DataGridView_student.RowTemplate.Height = 80;
-            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-            imageColumn = (DataGridViewImageColumn)DataGridView_student.Columns[7];
-            imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            pictureBox_student.Image = null;
         }
     }
 }
