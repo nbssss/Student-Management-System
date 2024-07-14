@@ -36,4 +36,8 @@ Główne cele to:
 - **Modele**: Klasy reprezentujące dane aplikacji, takie jak `StudentClass`, `CourseClass`, `ScoreClass`.
 - **Baza Danych**: Używa lokalnej bazy danych (SQL Server) do przechowywania informacji o studentach, kursach i ocenach. Wykorzystuje Entity Framework do mapowania obiektów na bazę danych.
 
-### Zrzuty Ekranu
+### Przykłądowe działanie aplikacji
+
+#### Logowanie do systemu
+
+![](login_rec.gif)
