@@ -48,4 +48,8 @@ Główne cele to:
 
 #### Przykładowe zarządzanie kursami
 
+![](course_rec.gif)
+
 #### Przykładowe zarządzanie ocenami
+
+![](score_rec.gif)
